@@ -1,0 +1,41 @@
+.admin-orders {
+  padding: 30px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-card {
+  background:  var(--sage-200);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.order-card h2 {
+  margin-bottom: 10px;
+}
+
+.order-card ul {
+  padding-left: 20px;
+}
+
+.delete-order-btn, .order-delivered-btn{
+  padding: 10px 5px;
+  background: var(--sage-400);
+  color: var(--sage-800);
+  border: 2px solid var(--sage-600);
+  border-radius: 25px;
+}
+
+.delete-order-btn:hover, .order-delivered-btn:hover{
+  padding: 10px 5px;
+  background: var(--sage-600);
+  color: var(--sage-100);
+  border: 2px solid var(--sage-900);
+  border-radius: 25px;
+  cursor: pointer;
+}

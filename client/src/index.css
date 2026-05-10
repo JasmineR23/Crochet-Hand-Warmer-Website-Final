@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --mystic-tulip: #D8A7A0;
+  --salmon-mousse: #E7B7A3;
+  --dusty-path: #A78A6A;
+  --cactus-valley: #8A9A6A;
+  --light-yellow: #E3E2A4;
+
+   
+  --sage-50:  #F7FAF7;
+  --sage-100: #F1F5F2;
+  --sage-200: #DCE7D9;
+  --sage-300: #C7D9C3;
+  --sage-400: #B7CBB2;
+  --sage-500: #8FAF8C;
+  --sage-600: #6E8F6B;
+  --sage-700: #4F6F4C;
+  --sage-800: #3A5238;
+  --sage-900: #2A3C29;
+
+
+  --oak-50:  #F8F3EE;
+  --oak-100: #EFE3D6;
+  --oak-200: #E2CBB3;
+  --oak-300: #D4B391;
+  --oak-400: #C79C72;
+  --oak-500: #B88552;
+  --oak-600: #9C6D3F;
+  --oak-700: #7C552F;
+  --oak-800: #5A3E1F;
+  --oak-900: #3D2A15;
+
+  
+  --pink-50:  #FFF7FA;
+  --pink-100: #FEEBF1;
+  --pink-200: #FBD6E2;
+  --pink-300: #F7B8CD;
+  --pink-400: #F093B4;
+  --pink-500: #E36A96;
+  --pink-600: #C94A7C;
+  --pink-700: #A53563;
+  --pink-800: #7A2447;
+  --pink-900: #521830;
+
+  --font-main: "Inter", Arial, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: var(--sage-400);
+}
+
+
+
+.app{
+    width: 100%;
+    min-height: 100vh;
+}
+
+*{
+    font-family: Poppins;
+}
+
+button, .order-now {
+  background: var(--cactus-valley);
+  color: rgb(0, 0, 0);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover, .order-now:hover {
+  background: var(--dusty-path);
+}

@@ -1,0 +1,147 @@
+// -----------------------------
+//  Prisma Setup
+// -----------------------------
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+// -----------------------------
+//  MODELS — HANDWARMER SYSTEM
+// -----------------------------
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String
+  email     String   @unique
+  password  String
+  profileImage String? 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  handWarmersPlaced HandWarmerPlaced[]
+  comments Comment[]
+  likes    Like[]
+  handWarmerLikes HandWarmerLike[]
+}
+
+model HandWarmerPlaced {
+  id             Int @id @default(autoincrement())
+  quantityPlaced Int
+
+  userId       Int?
+  handWarmerId Int?
+
+  user       User?       @relation(fields: [userId], references: [id])
+  handWarmer HandWarmer? @relation(fields: [handWarmerId], references: [id])
+}
+
+model HandWarmer {
+  id          Int    @id @default(autoincrement())
+  name        String
+  quantity    Int
+  ordered     Int    @default(0)
+  image       String
+  description String
+  style       String
+
+  comments Comment[]
+  handWarmerLikes HandWarmerLike[]
+
+
+  // Users who placed this hand warmer
+  handWarmersPlaced HandWarmerPlaced[]
+
+  // Material breakdown (cotton %, acrylic %, etc.)
+  materialDetails HandWarmerMaterial[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model HandWarmerMaterial {
+  id     Int    @id @default(autoincrement())
+  colour String
+
+  handWarmerId Int?
+  handWarmer   HandWarmer? @relation(fields: [handWarmerId], references: [id])
+
+  distribution MaterialDistribution[]
+}
+
+model MaterialDistribution {
+  id       Int    @id @default(autoincrement())
+  material String
+  percent  String
+
+  materialId         Int?
+  handWarmerMaterial HandWarmerMaterial? @relation(fields: [materialId], references: [id])
+}
+
+model Order {
+  id              Int      @id @default(autoincrement())
+  userId          Int
+  items           Json
+  total           Int
+  shipping        Json
+  paymentIntentId String
+  createdAt       DateTime @default(now())
+}
+
+model HandWarmerLike {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id])
+
+  handWarmerId Int
+  handWarmer   HandWarmer @relation(fields: [handWarmerId], references: [id])
+
+  @@unique([userId, handWarmerId]) // prevents duplicate likes
+}
+
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  image     String?        // optional, if you want image comments later
+  createdAt DateTime @default(now())
+
+  // Relations
+  userId       Int
+  user         User       @relation(fields: [userId], references: [id])
+
+  handWarmerId Int
+  handWarmer   HandWarmer @relation(fields: [handWarmerId], references: [id])
+
+  likes Like[]
+}
+
+model Like {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  commentId Int
+  comment   Comment  @relation(fields: [commentId], references: [id])
+
+  @@unique([userId, commentId]) // prevents duplicate likes
+}
+
+
+
+// -----------------------------
+//  ENUMS
+// -----------------------------
+
+enum MovementType {
+  IN
+  OUT
+}

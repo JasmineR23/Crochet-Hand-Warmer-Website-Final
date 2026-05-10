@@ -1,0 +1,31 @@
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 200px;
+    background: var(--sage-600);
+    color: var(--sage-200);
+    height: 100vh;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    border: 3px solid var(--sage-800);
+}
+
+.sidebar-option{
+    border: 2px solid var(--sage-300);
+    background: var(--sage-500);
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 20px;
+}
+.sidebar-option:hover{
+    border: 2px solid var(--sage-900);
+    background: var(--sage-700);
+    cursor: pointer;
+    color: var(--sage-900);
+    padding: 10px 5px;
+    text-align: center;
+    border-radius: 20px;
+}

@@ -1,0 +1,141 @@
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    margin: 20px;
+    background: var(--sage-300);
+    border: 2px solid var(--sage-700);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+
+}
+
+.products-elements {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: var(--sage-200);
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.hand-warmers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+
+
+.hand-warmer-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.hand-warmer-image:hover {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hand-warmer-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hand-warmer-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-soft);
+}
+
+.hand-warmer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: var(--sage-500);
+    border: 2px solid var(--sage-900);
+    border-radius: 20px;
+}
+
+.hand-warmers-item:hover {
+    cursor: pointer;
+    width: 120%;
+    height: 120%;
+}
+
+.filter {
+    width: 450px;
+    height: 800px;
+    border-radius: 25%;
+    margin: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 300px;
+    background: var(--sage-400);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.colour-options {
+    list-style: none;
+}
+
+.material-options {
+    list-style: none;
+}
+
+.style-options {
+    list-style: none;
+}
+
+.increase, .removed, .quantity-ordered{
+    color: var(--sage-900);
+}
+
+.hand-warmer-name{
+    text-decoration: none;
+    color: inherit;
+}
+
+.colour-options li,
+.style-options li,
+.material-options li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+.colour-options input[type="checkbox"],
+.style-options input[type="checkbox"],
+.material-options input[type="checkbox"] {
+    margin: 0;
+}
+
+.colour-options,
+.style-options,
+.material-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.image-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.hand-warmer-name{
+    text-align: center;
+    color: var(--sage-900);
+}

@@ -1,0 +1,28 @@
+.profile{
+    display: flex;
+    flex-direction: row;
+}
+
+.right-panel{
+    display: flex;
+    flex-direction: column;
+    width: 729px;
+    height: 703px;
+    background: var(--sage-300);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.left-panel{
+    width: 729px;
+    height: 703px;
+    background: var(--sage-500);
+}
+
+.profile-image{
+    height: 500px;
+    border-radius: 250px;
+    align-self: center;
+    align-items: center;
+}

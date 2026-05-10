@@ -1,0 +1,32 @@
+.about{
+    background-color: var(--sage-500);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    border: 2px solid var(--sage-700);
+    border-radius: 25px;
+    margin: 10px 12px;
+    padding: 0px 30px;
+}
+.about p{
+    text-align: center;
+}
+
+.contact{
+    background-color: var(--sage-500);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 150vh;
+    align-self: center;
+    border: 2px solid var(--sage-700);
+    border-radius: 25px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
